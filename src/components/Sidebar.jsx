@@ -6,7 +6,8 @@ import { FiEdit } from "react-icons/fi"
 import { AiFillSetting } from "react-icons/ai"
 const Sidebar = () => {
     return (
-        
+        <>
+
             <aside className="md:static md:block bg-gray-100 w-1/5 p-4 text-black shadow-xl">
                 <h2 className="text-3xl font-bold pt-5 px-5 text-gray-600"><a href="/"><span className="text-red-500">T</span>ask<span className="text-red-500">S</span>ync</a></h2>
                 <ul className="pt-2 pb-4 space-y-1 text-sm mt-10">
@@ -14,7 +15,7 @@ const Sidebar = () => {
                         <a
                             style={{ cursor: "pointer" }}
                             className="flex items-center p-2 space-x-3 rounded-md"
-                            //onClick={changehomestate}
+                        //onClick={changehomestate}
                         >
                             <AiFillHome size={20} className="ml-1 text-red-500" />
                             <span className="">Home</span>
@@ -59,7 +60,8 @@ const Sidebar = () => {
                     </li>
                 </ul>
             </aside>
-        
+        </>
+
     )
 }
 

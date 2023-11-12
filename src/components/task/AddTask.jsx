@@ -40,11 +40,9 @@ const AddTask = () => {
 
 
     return (
-        <div class='flex items-center justify-center mx-auto mt-10'>
-            <form >
-                <div className="space-y-8">
-
-
+        <div class='flex items-center justify-center mt-10'>
+            <form className='w-1/2'>
+                <div className="w-full">
                     <div className="border-b border-gray-900/10 pb-12">
                         <h2 className="text-3xl flex justify-center font-semibold leading-7 text-gray-900">Add Task</h2>
 
@@ -89,7 +87,7 @@ const AddTask = () => {
                                 </div>
                             </div>
 
-                            {/* <div className="sm:col-span-3">
+                                {/* <div className="sm:col-span-3">
                                 <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
                                     Country
                                 </label>

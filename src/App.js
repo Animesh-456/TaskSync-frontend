@@ -12,6 +12,7 @@ import EditProfile from './components/EditProfile';
 import AddTask from './components/task/AddTask';
 import Assign from './components/task/Assign';
 import Newdash from './components/Newdash';
+import Sidebar from './components/Sidebar'
 function App() {
   return (
     <>
