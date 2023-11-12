@@ -60,7 +60,8 @@ const AssignTask = () => {
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
     const [activeLink, setactivelink] = useState('unassigned');
-    const [task, settask] = useState([])
+    const [task, settask] = useState([]);
+    const [pndtask, setpndtask] = useState([]);
     const userdata = localStorage.getItem('empdetails');
     const usr = JSON.parse(userdata);
 
@@ -70,7 +71,7 @@ const AssignTask = () => {
         if (activeLink == "unassigned") {
 
             viewTasksUnassigned(usr.id).then(d => {
-                settask(d.data)
+                setpndtask(d.data)
             }).catch(error => {
                 console.log(error)
             })
@@ -191,11 +192,11 @@ const AssignTask = () => {
 
             {activeLink === 'unassigned' ? (
                 <div className="container mx-auto py-4">
-                    {task.length ? (<h1 className="text-2xl font-bold mb-4 pl-5">Unassigned Task List</h1>) : (<h1 className="text-2xl font-bold mb-4">No Tasks yet</h1>)}
+                    {pndtask.length ? (<h1 className="text-2xl font-bold mb-4 pl-5">Unassigned Task List</h1>) : (<h1 className="text-2xl font-bold mb-4">No Tasks yet</h1>)}
 
                     <div className="bg-white shadow overflow-x-auto sm:rounded-lg">
                         <table className="min-w-full divide-y divide-gray-200">
-                            {task.length ? (
+                            {pndtask.length ? (
                                 <thead>
                                     <tr>
                                         <th className="px-6 py-3 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -215,7 +216,7 @@ const AssignTask = () => {
                             ) : (<></>)}
 
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {task.length ? task.map((task) => (
+                                {pndtask.length ? pndtask.map((task) => (
                                     <tr key={task.id} className="hover:bg-gray-100">
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="text-sm text-gray-900">{task._id}</div>
@@ -224,7 +225,7 @@ const AssignTask = () => {
                                             <div className="text-sm text-gray-900">{task.title}</div>
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">
+                                            <span className={`inline-flex items-center rounded-md ${task?.status == "complete" ? `bg-green-300 text-green-700` : `bg-yellow-500 text-white`} px-2 py-1 text-xs font-medium ring-1 ring-inset ring-yellow-600/20`}>
                                                 {task.status}
                                             </span>
 
@@ -281,7 +282,7 @@ const AssignTask = () => {
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             {/* <div className="text-sm font-bold text-green-500">{task.status}</div> */}
-                                            <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                                            <span className={`inline-flex items-center rounded-md ${task?.status == "complete" ? `bg-green-300 text-green-700` : `bg-yellow-500 text-white`} px-2 py-1 text-xs font-medium  ring-1 ring-inset ring-green-600/20`}>
                                                 {task.status}
                                             </span>
                                         </td>

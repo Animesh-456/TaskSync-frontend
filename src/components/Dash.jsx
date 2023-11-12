@@ -290,8 +290,7 @@ const Newdash = () => {
                 className={`${isMobile ? 'w-full' : 'w-3/4'
                     } p-6 transition-all duration-700 ease-in-out`}
             >
-                {/* Content goes here */}
-                {/* <h2 className="text-2xl font-semibold mb-4">Dashboard Overview</h2> */}
+
                 {!isMobileSidebarOpen && (
                     <>
 
@@ -417,7 +416,7 @@ const Newdash = () => {
                                                                         <tr key={index}>
                                                                             <td class="px-4 py-3">{task?.title}</td>
                                                                             <td class="px-4 py-3">{task?.description}</td>
-                                                                            <td class="px-4 py-3"><span className={`inline-flex items-center rounded-md ${task?.status == 'complete' ? 'bg-green-50' : 'bg-yellow-50'} px-2 py-1 text-xs font-medium ${task?.status == 'complete' ? 'text-green-700 ring-green-600/20' : 'text-yellow-700 ring-yellow-500/100'} ring-1 ring-inset`}>{task?.status}</span></td>
+                                                                            <td class="px-4 py-3"><span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ${task?.status == 'complete' ? 'bg-green-300 text-green-700' : 'bg-yellow-500 text-white'}`}>{task?.status}</span></td>
                                                                             <td class="px-4 py-3">{task?.createdAt}</td>
                                                                         </tr>
                                                                     </tbody>
@@ -452,7 +451,7 @@ const Newdash = () => {
                                                                         <tr key={index}>
                                                                             <td class="px-4 py-3">{task?.title}</td>
                                                                             <td class="px-4 py-3">{task?.description}</td>
-                                                                            <td class="px-4 py-3"><span className={`inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium ${task?.status == 'complete' ? 'text-green-700 ring-green-600/20' : 'text-yellow-400 ring-yellow-500/100'} ring-1 ring-inset`}>{task?.status}</span></td>
+                                                                            <td class="px-4 py-3"><span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ${task?.status == 'complete' ? 'bg-green-300 text-green-700' : 'bg-yellow-500 text-white'}`}>{task?.status}</span></td>
                                                                             <td class="px-4 py-3">{task?.createdAt}</td>
                                                                         </tr>
                                                                     </tbody>
